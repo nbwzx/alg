@@ -1,3 +1,15 @@
+/*!
+ * Alg (https://github.com/nbwzx/alg)
+ * Copyright (c) 2023 Zixing Wang
+ * Licensed under MIT (https://github.com/nbwzx/alg/blob/master/LICENSE)
+ */
+
+/*!
+ * Commutator (https://github.com/nbwzx/commutator)
+ * Copyright (c) 2022-2023 Zixing Wang
+ * Licensed under MIT (https://github.com/nbwzx/commutator/blob/main/LICENSE)
+ */
+
 /**
  * @license React
  * react-dom.production.min.js
