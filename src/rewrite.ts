@@ -1,3 +1,11 @@
+/*!
+ * Alg (https://github.com/nbwzx/alg)
+ * Copyright (c) 2023 Zixing Wang
+ * Licensed under MIT (https://github.com/nbwzx/alg/blob/master/LICENSE)
+ */
+
+import { expand_public } from "./commutator";
+
 const MOVE = ['U', 'U2', "U'",
     'R', 'R2', "R'",
     'F', 'F2', "F'",
@@ -128,7 +136,7 @@ export function rewrite(alg: string, ALG_ALLOWED: string[]) {
         }
         return rotation_index;
     }
-    alg = alg.trim();
+    alg = expand_public(alg);
     const res = alg.split(" ");
     let rotation_index = 0;
     const out: string[] = [];
@@ -137,7 +145,7 @@ export function rewrite(alg: string, ALG_ALLOWED: string[]) {
         return '';
     }
     if (ROTATION[rotation_index] === '') {
-        return out.join(" ");
+        return expand_public(out.join(" "));
     }
-    return out.join(" ") + " " + ROTATION[rotation_index];
+    return expand_public(out.join(" ") + " " + ROTATION[rotation_index]);
 }
