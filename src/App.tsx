@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   const [inputText, setInputText] = useState('');
   const [rewritedText, setRewritedText] = useState('');
-  const options = ['R', 'L', 'U', 'D', 'F', 'B', 'l', 'r', 'd', 'u', 'b', 'f'];
+  const options = ['R', 'L', 'U', 'D', 'F', 'B', 'l', 'r', 'd', 'u', 'b', 'f', 'E', 'M', 'S'];
   const [selectedOptions, setSelectedOptions] = useState<string[]>(options);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,25 +42,25 @@ function App() {
   };
   
   const selectRightyOptions = () => {
-    setSelectedOptions(['R', 'r', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f']);
-    const rewrited = rewrite(inputText, ['R', 'r', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f']);
+    setSelectedOptions(['R', 'r', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f', 'E', 'M', 'S']);
+    const rewrited = rewrite(inputText, ['R', 'r', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f', 'E', 'M', 'S']);
     setRewritedText(rewrited);
   };
 
   const selectLeftyOptions = () => {
-    setSelectedOptions(['l', 'L', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f']);
-    const rewrited = rewrite(inputText, ['l', 'L', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f']);
+    setSelectedOptions(['l', 'L', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f', 'E', 'M', 'S']);
+    const rewrited = rewrite(inputText, ['l', 'L', 'U', 'd', 'D', 'u', 'F', 'b', 'B', 'f', 'E', 'M', 'S']);
     setRewritedText(rewrited);
   };
 
   const selectSingleOptions = () => {
-    setSelectedOptions(['R', 'L', 'U', 'D', 'F', 'B']);
-    const rewrited = rewrite(inputText, ['R', 'L', 'U', 'D', 'F', 'B']);
+    setSelectedOptions(['R', 'L', 'U', 'D', 'F', 'B', 'E', 'M', 'S']);
+    const rewrited = rewrite(inputText, ['R', 'L', 'U', 'D', 'F', 'B', 'E', 'M', 'S']);
     setRewritedText(rewrited);
   };
 
   const isPairSelectionValid = () => {
-    for (let i = 0; i < options.length / 2; i++) {
+    for (let i = 0; i < 6; i++) {
       if (!selectedOptions.includes(options[i]) && !selectedOptions.includes(options[i + 6])) {
         return false;
       }
@@ -69,7 +69,7 @@ function App() {
   };
 
   const isSelectionValid = (selectedOptions: string[]) => {
-    for (let i = 0; i < options.length / 2; i++) {
+    for (let i = 0; i < 6; i++) {
       if (!selectedOptions.includes(options[i]) && !selectedOptions.includes(options[i + 6])) {
         return false;
       }

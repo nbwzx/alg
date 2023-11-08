@@ -37,6 +37,21 @@ const OptionsForm: React.FC<OptionsFormProps> = ({ options, selectedOptions, han
         )
         )}
       </div>
+      <div className="form-check-group">
+        Slice Moves:
+        {options.slice(12, 15).map((option, index) => (
+            <div className="form-check" key={index} style={{ minWidth: '40px' }}>
+            <input
+                type="checkbox"
+                className="form-check-input"
+                checked={selectedOptions.includes(option)}
+                onChange={() => handleOptionChange(option)}
+            />
+            <label className="form-check-label">{option}</label>
+            </div>
+        )
+        )}
+      </div>
     </div>
   );
 };

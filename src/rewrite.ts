@@ -107,7 +107,16 @@ const ALG_REPLACE: Alg_replace = {
     "l'": "R' x",
     "b": "F z'",
     "b2": "F2 z2",
-    "b'": "F' z"
+    "b'": "F' z",
+    "E": "U D' y'",
+    "E2": "U2 D2 y2",
+    "E'": "U' D y",
+    "M": "L' R x'",
+    "M2": "L2 R2 x2",
+    "M'": "L R' x",
+    "S": "F' B z",
+    "S2": "F2 B2 z2",
+    "S'": "F B' z'"
 };
 
 interface Alg_replace {
