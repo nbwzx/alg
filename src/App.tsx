@@ -59,15 +59,6 @@ function App() {
     setRewritedText(rewrited);
   };
 
-  const isPairSelectionValid = () => {
-    for (let i = 0; i < 6; i++) {
-      if (!selectedOptions.includes(options[i]) && !selectedOptions.includes(options[i + 6])) {
-        return false;
-      }
-    }
-    return true;
-  };
-
   const isSelectionValid = (selectedOptions: string[]) => {
     for (let i = 0; i < 6; i++) {
       if (!selectedOptions.includes(options[i]) && !selectedOptions.includes(options[i + 6])) {
@@ -105,7 +96,7 @@ function App() {
 
       <OptionsForm options={options} selectedOptions={selectedOptions} handleOptionChange={handleOptionChange} />
 
-      {!isPairSelectionValid() && (
+      {!isSelectionValid(selectedOptions) && (
         <p style={{ color: 'red' }}>You must select at least one checkbox from each pair of options arranged vertically.</p>
       )}
 
